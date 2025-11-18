@@ -38,27 +38,37 @@ export default function Index() {
         </nav>
       </header>
 
-      <section id="hero" className="pt-32 pb-20 px-4">
-        <div className="container mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="animate-fade-in">
-              <h2 className="text-5xl md:text-6xl font-bold mb-6 text-primary leading-tight">
-                Кастомные металлические кружки ручной работы
-              </h2>
-              <p className="text-xl mb-8 text-muted-foreground">
-                Создаём уникальные кружки по вашим эскизам. Каждая работа — произведение искусства, выполненное мастером с душой.
-              </p>
-              <Button size="lg" onClick={() => scrollToSection('contact')} className="text-lg px-8">
-                Заказать кружку
-              </Button>
-            </div>
-            <div className="animate-scale-in">
-              <img 
-                src="https://cdn.poehali.dev/projects/1ca9f815-0422-48fe-b9ee-205d09a290c9/files/13236bd4-3a09-48e4-be83-9981929f4faa.jpg" 
-                alt="Кастомная металлическая кружка"
-                className="rounded-lg shadow-2xl w-full"
-              />
-            </div>
+      <section id="hero" className="relative min-h-screen flex items-center overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: 'url(https://cdn.poehali.dev/projects/1ca9f815-0422-48fe-b9ee-205d09a290c9/files/31e654fd-94cb-4c95-8642-10a9de9715aa.jpg)'
+          }}
+        />
+        <div className="absolute inset-0 bg-black/40" />
+        
+        <img 
+          src="https://cdn.poehali.dev/projects/1ca9f815-0422-48fe-b9ee-205d09a290c9/files/13236bd4-3a09-48e4-be83-9981929f4faa.jpg"
+          alt="Floating mug"
+          className="absolute w-32 md:w-48 animate-float opacity-80"
+          style={{
+            animation: 'float 6s ease-in-out infinite',
+            top: '20%',
+            right: '10%'
+          }}
+        />
+
+        <div className="container mx-auto px-4 relative z-10 text-center">
+          <div className="max-w-4xl mx-auto animate-fade-in">
+            <h2 className="text-5xl md:text-7xl font-bold mb-6 text-white leading-tight drop-shadow-lg">
+              Кастомные металлические кружки ручной работы
+            </h2>
+            <p className="text-xl md:text-2xl mb-8 text-white/90 drop-shadow-md">
+              Создаём уникальные кружки по вашим эскизам. Каждая работа — произведение искусства, выполненное мастером с душой.
+            </p>
+            <Button size="lg" onClick={() => scrollToSection('contact')} className="text-lg px-8">
+              Заказать кружку
+            </Button>
           </div>
         </div>
       </section>
